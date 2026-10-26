@@ -1,0 +1,5 @@
+functions-framework
+mlflow
+scikit-learn
+pandas
+cloudpickle

@@ -1,0 +1,6 @@
+{
+  "spearman_rank_correlation_all_feature_weeks": 0.958,
+  "weeks_with_same_0.25_flag": 8,
+  "weeks_with_same_top_feature": 6,
+  "n_feature_weeks": 64
+}

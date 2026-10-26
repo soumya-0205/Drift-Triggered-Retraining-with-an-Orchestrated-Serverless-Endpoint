@@ -1,0 +1,5 @@
+escalation PSI,weeks escalated,retrains,promotions,mean log loss,wk6-8 log loss,total cost
+0.25,"[5, 7]",2,2,0.507,0.613,98740
+0.5,[6],2,1,0.511,0.624,99700
+1.0,[6],2,1,0.511,0.624,99700
+2.0,[],3,2,0.505,0.607,96830

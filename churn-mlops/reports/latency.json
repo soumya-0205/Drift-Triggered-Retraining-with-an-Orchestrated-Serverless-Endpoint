@@ -1,0 +1,21 @@
+{
+  "n_cold": 30,
+  "n_warm": 200,
+  "cold_total_ms": {
+    "p50": 2664.4,
+    "p95": 3091.5,
+    "mean": 3162.2
+  },
+  "cold_breakdown_mean_ms": {
+    "import_s": 2314.0,
+    "app_s": 7.5,
+    "first_request_s": 840.7
+  },
+  "cold_process_wall_ms_p50": 3137.0,
+  "warm_ms": {
+    "p50": 6.2,
+    "p95": 8.1,
+    "mean": 6.5
+  },
+  "cold_to_warm_ratio_p50": 429.7
+}

@@ -1,0 +1,12 @@
+{
+  "chal_pr_auc": 0.5551880667732432,
+  "chal_roc_auc": 0.7484779299847792,
+  "chal_f1": 0.5236051502145923,
+  "chal_recall": 0.5648148148148148,
+  "chal_precision": 0.488,
+  "chal_log_loss": 0.5011488310891403,
+  "chal_brier": 0.16610994877837967,
+  "chal_mean_pred": 0.28608051883262997,
+  "chal_positive_rate": 0.27,
+  "logloss_gain_vs_prod": 0.007575402257268225
+}

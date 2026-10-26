@@ -1,0 +1,13 @@
+prefect>=3.4
+mlflow>=3.0
+functions-framework
+scikit-learn
+pandas
+scipy
+matplotlib
+cloudpickle
+nbformat
+nbconvert
+ipykernel
+evidently
+pytest

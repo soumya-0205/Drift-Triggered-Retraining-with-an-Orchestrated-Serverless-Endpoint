@@ -1,0 +1,6 @@
+policy,retrains,promotions,mean_auc,mean_logloss,logloss_w6_8,total_cost_usd,cost_vs_never_usd
+never,0,0,0.764,0.52,0.646,104460.0,0.0
+weekly,8,3,0.772,0.505,0.607,97080.0,-7380.0
+drift PSI>=0.10,5,3,0.772,0.505,0.607,96930.0,-7530.0
+drift PSI>=0.25,3,2,0.772,0.505,0.607,96830.0,-7630.0
+drift PSI>=0.25 + escalation,2,1,0.769,0.511,0.624,99700.0,-4760.0

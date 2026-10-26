@@ -1,0 +1,9 @@
+week,prefect run,prefect state,outcome,max PSI,drift (>=0.25),branch,retrained,promoted,escalated,prod before->after,tasks run,seconds,stages skipped
+1,wild-bull,Completed,SUCCESS,0.0434,no,no_action,no,no,no,v1->v1,9,1.14,"retrain, promotion"
+2,enthusiastic-trogon,Completed,SUCCESS,0.0302,no,no_action,no,no,no,v1->v1,9,0.34,"retrain, promotion"
+3,nimble-serval,Completed,SUCCESS,0.0574,no,no_action,no,no,no,v1->v1,9,0.36,"retrain, promotion"
+4,wild-chinchilla,Completed,SUCCESS,0.1657,no,no_action,no,no,no,v1->v1,9,0.34,"retrain, promotion"
+5,optimistic-spaniel,Completed,SUCCESS,0.345,yes,retrain,yes,no,no,v1->v1,11,4.4,promotion
+6,gracious-crane,Completed,ESCALATED,1.538,yes,escalate,no,no,yes,v1->v1,10,0.43,"retrain, promotion"
+7,victorious-heron,Completed,SUCCESS,1.9025,yes,retrain,yes,yes,no,v1->v3,11,3.21,-
+8,diligent-manticore,Completed,SUCCESS,0.1071,no,no_action,no,no,no,v3->v3,9,0.31,"retrain, promotion"

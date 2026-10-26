@@ -1,0 +1,121 @@
+2026/10/21 01:26:39 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/21 01:26:39 INFO mlflow.store.db.utils: Updating database tables
+2026/10/21 01:26:41 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Successfully registered model 'churn-model'.
+Created version '1' of model 'churn-model'.
+registered + promoted version 1
+{'holdout_pr_auc': 0.469, 'holdout_roc_auc': 0.753, 'holdout_f1': 0.469, 'holdout_recall': 0.461, 'holdout_precision': 0.477, 'holdout_log_loss': 0.44, 'holdout_brier': 0.139, 'holdout_mean_pred': 0.206, 'holdout_positive_rate': 0.205, 'train_pr_auc': 0.529, 'train_roc_auc': 0.806}
+ENDPOINT START: {'model_version': 1, 'threshold': 0.35, 'predictions': [{'churn_probability': 0.8515, 'churn_label': 1}]}
+BAD INPUT (missing feature): {'http_error': 400, 'body': '{"error": "missing features: [\'Monthly_Charges\', \'Total_Charges\', \'Support_Calls_Last_Month\', \'Avg_Data_Usage_GB\', \'Late_Payments\', \'Contract_Type\', \'Internet_Service\']"}'}
+01:26:48.528 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8759
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:26:51.991 | ERROR   | prefect.server.services.telemetry - Failed to send telemetry: [Errno -2] Name or service not known
+01:26:52.245 | INFO    | Flow run 'quick-bear' - Beginning flow run 'quick-bear' for flow 'weekly-churn-pipeline'
+01:26:52.288 | INFO    | Task run '1-ingest-a36' - Finished in state Completed()
+01:26:52.323 | INFO    | Task run '2-validate-03e' - Finished in state Completed()
+01:26:52.526 | INFO    | Task run '3-load-production-261' - Finished in state Completed()
+01:26:52.574 | INFO    | Task run '4-score-deployed-model-4ef' - Finished in state Completed()
+01:26:52.672 | INFO    | Task run '5-drift-check-009' - Finished in state Completed()
+01:26:52.684 | INFO    | Task run '6-decide-234' - Finished in state Completed()
+01:26:52.694 | INFO    | Task run '7x-skip-retrain-461' - Finished in state Completed()
+01:26:52.702 | INFO    | Task run '8b-skip-promotion-b9b' - Finished in state Completed()
+01:26:52.729 | INFO    | Task run '10-record-summary-807' - Finished in state Completed()
+01:26:53.284 | INFO    | Flow run 'quick-bear' - Finished in state Completed()
+AFTER WEEK 1: workflow prod=v1 status=SUCCESS | endpoint serves model_version=1 p=0.8515
+01:26:54.185 | INFO    | Flow run 'fierce-gerbil' - Beginning flow run 'fierce-gerbil' for flow 'weekly-churn-pipeline'
+01:26:54.200 | INFO    | Task run '1-ingest-659' - Finished in state Completed()
+01:26:54.243 | INFO    | Task run '2-validate-969' - Finished in state Completed()
+01:26:54.383 | INFO    | Task run '3-load-production-fc8' - Finished in state Completed()
+01:26:54.427 | INFO    | Task run '4-score-deployed-model-883' - Finished in state Completed()
+01:26:54.502 | INFO    | Task run '5-drift-check-675' - Finished in state Completed()
+01:26:54.513 | INFO    | Task run '6-decide-56a' - Finished in state Completed()
+01:26:54.520 | INFO    | Task run '7x-skip-retrain-0bb' - Finished in state Completed()
+01:26:54.527 | INFO    | Task run '8b-skip-promotion-062' - Finished in state Completed()
+01:26:54.562 | INFO    | Task run '10-record-summary-44c' - Finished in state Completed()
+01:26:55.188 | INFO    | Flow run 'fierce-gerbil' - Finished in state Completed()
+AFTER WEEK 2: workflow prod=v1 status=SUCCESS | endpoint serves model_version=1 p=0.8515
+01:26:56.086 | INFO    | Flow run 'emotional-frigatebird' - Beginning flow run 'emotional-frigatebird' for flow 'weekly-churn-pipeline'
+01:26:56.100 | INFO    | Task run '1-ingest-56a' - Finished in state Completed()
+01:26:56.149 | INFO    | Task run '2-validate-2ba' - Finished in state Completed()
+01:26:56.236 | INFO    | Task run '3-load-production-8f9' - Finished in state Completed()
+01:26:56.275 | INFO    | Task run '4-score-deployed-model-e88' - Finished in state Completed()
+01:26:56.345 | INFO    | Task run '5-drift-check-7bb' - Finished in state Completed()
+01:26:56.351 | INFO    | Task run '6-decide-fbc' - Finished in state Completed()
+01:26:56.359 | INFO    | Task run '7x-skip-retrain-2b8' - Finished in state Completed()
+01:26:56.367 | INFO    | Task run '8b-skip-promotion-9f9' - Finished in state Completed()
+01:26:56.395 | INFO    | Task run '10-record-summary-604' - Finished in state Completed()
+01:26:57.091 | INFO    | Flow run 'emotional-frigatebird' - Finished in state Completed()
+AFTER WEEK 3: workflow prod=v1 status=SUCCESS | endpoint serves model_version=1 p=0.8515
+01:26:57.982 | INFO    | Flow run 'ingenious-heron' - Beginning flow run 'ingenious-heron' for flow 'weekly-churn-pipeline'
+01:26:57.995 | INFO    | Task run '1-ingest-bbf' - Finished in state Completed()
+01:26:58.028 | INFO    | Task run '2-validate-bd0' - Finished in state Completed()
+01:26:58.116 | INFO    | Task run '3-load-production-588' - Finished in state Completed()
+01:26:58.162 | INFO    | Task run '4-score-deployed-model-12e' - Finished in state Completed()
+01:26:58.256 | INFO    | Task run '5-drift-check-262' - Finished in state Completed()
+01:26:58.267 | INFO    | Task run '6-decide-b64' - Finished in state Completed()
+01:26:58.282 | INFO    | Task run '7x-skip-retrain-472' - Finished in state Completed()
+01:26:58.288 | INFO    | Task run '8b-skip-promotion-100' - Finished in state Completed()
+01:26:58.323 | INFO    | Task run '10-record-summary-8f3' - Finished in state Completed()
+01:26:58.985 | INFO    | Flow run 'ingenious-heron' - Finished in state Completed()
+AFTER WEEK 4: workflow prod=v1 status=SUCCESS | endpoint serves model_version=1 p=0.8515
+01:26:59.868 | INFO    | Flow run 'proud-waxbill' - Beginning flow run 'proud-waxbill' for flow 'weekly-churn-pipeline'
+01:26:59.878 | INFO    | Task run '1-ingest-12b' - Finished in state Completed()
+01:26:59.912 | INFO    | Task run '2-validate-3d4' - Finished in state Completed()
+01:27:00.018 | INFO    | Task run '3-load-production-cd6' - Finished in state Completed()
+01:27:00.052 | INFO    | Task run '4-score-deployed-model-ab5' - Finished in state Completed()
+01:27:00.132 | INFO    | Task run '5-drift-check-c57' - Finished in state Completed()
+01:27:00.143 | INFO    | Task run '6-decide-9cb' - Finished in state Completed()
+01:27:00.215 | INFO    | Task run '7a-retrain-bb8' - Finished in state Completed()
+01:27:00.255 | INFO    | Task run '7b-compare-on-recent-data-808' - Finished in state Completed()
+2026/10/21 01:27:00 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '2' of model 'churn-model'.
+01:27:02.959 | INFO    | Task run '7c-register-challenger-5c2' - Finished in state Completed()
+01:27:02.964 | INFO    | Task run '8b-skip-promotion-071' - Finished in state Completed()
+01:27:02.995 | INFO    | Task run '10-record-summary-069' - Finished in state Completed()
+01:27:03.876 | INFO    | Flow run 'proud-waxbill' - Finished in state Completed()
+AFTER WEEK 5: workflow prod=v1 status=SUCCESS | endpoint serves model_version=1 p=0.8515
+01:27:04.776 | INFO    | Flow run 'solemn-cat' - Beginning flow run 'solemn-cat' for flow 'weekly-churn-pipeline'
+01:27:04.792 | INFO    | Task run '1-ingest-c6a' - Finished in state Completed()
+01:27:04.838 | INFO    | Task run '2-validate-c80' - Finished in state Completed()
+01:27:04.953 | INFO    | Task run '3-load-production-13d' - Finished in state Completed()
+01:27:04.991 | INFO    | Task run '4-score-deployed-model-620' - Finished in state Completed()
+01:27:05.093 | INFO    | Task run '5-drift-check-674' - Finished in state Completed()
+01:27:05.103 | INFO    | Task run '6-decide-0ad' - Finished in state Completed()
+01:27:05.108 | CRITICAL | Task run '9-escalate-to-human-abb' - ESCALATION_TRIGGERED week=6 reasons=['max PSI 1.54 >= 1.0 on Monthly_Charges']
+01:27:05.140 | INFO    | Task run '9-escalate-to-human-abb' - Finished in state Completed()
+01:27:05.147 | INFO    | Task run '7x-skip-retrain-523' - Finished in state Completed()
+01:27:05.151 | INFO    | Task run '8b-skip-promotion-0e3' - Finished in state Completed()
+01:27:05.179 | INFO    | Task run '10-record-summary-edf' - Finished in state Completed()
+01:27:05.781 | INFO    | Flow run 'solemn-cat' - Finished in state Completed()
+AFTER WEEK 6: workflow prod=v1 status=ESCALATED | endpoint serves model_version=1 p=0.8515
+01:27:06.694 | INFO    | Flow run 'myrtle-wyvern' - Beginning flow run 'myrtle-wyvern' for flow 'weekly-churn-pipeline'
+01:27:06.711 | INFO    | Task run '1-ingest-46c' - Finished in state Completed()
+01:27:06.753 | INFO    | Task run '2-validate-d9d' - Finished in state Completed()
+01:27:06.862 | INFO    | Task run '3-load-production-4b0' - Finished in state Completed()
+01:27:06.912 | INFO    | Task run '4-score-deployed-model-f8d' - Finished in state Completed()
+01:27:07.021 | INFO    | Task run '5-drift-check-ad4' - Finished in state Completed()
+01:27:07.036 | INFO    | Task run '6-decide-a57' - Finished in state Completed()
+01:27:07.159 | INFO    | Task run '7a-retrain-963' - Finished in state Completed()
+01:27:07.212 | INFO    | Task run '7b-compare-on-recent-data-0fe' - Finished in state Completed()
+2026/10/21 01:27:07 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '3' of model 'churn-model'.
+01:27:09.768 | INFO    | Task run '7c-register-challenger-8b2' - Finished in state Completed()
+01:27:09.799 | INFO    | Task run '8a-promote-431' - Finished in state Completed()
+01:27:09.823 | INFO    | Task run '10-record-summary-0c6' - Finished in state Completed()
+01:27:10.698 | INFO    | Flow run 'myrtle-wyvern' - Finished in state Completed()
+AFTER WEEK 7: workflow prod=v3 status=SUCCESS | endpoint serves model_version=3 p=0.8133
+01:27:11.619 | INFO    | Flow run 'classic-pegasus' - Beginning flow run 'classic-pegasus' for flow 'weekly-churn-pipeline'
+01:27:11.636 | INFO    | Task run '1-ingest-596' - Finished in state Completed()
+01:27:11.667 | INFO    | Task run '2-validate-e6e' - Finished in state Completed()
+01:27:11.779 | INFO    | Task run '3-load-production-c1d' - Finished in state Completed()
+01:27:11.812 | INFO    | Task run '4-score-deployed-model-200' - Finished in state Completed()
+01:27:11.867 | INFO    | Task run '5-drift-check-820' - Finished in state Completed()
+01:27:11.874 | INFO    | Task run '6-decide-20a' - Finished in state Completed()
+01:27:11.883 | INFO    | Task run '7x-skip-retrain-2bf' - Finished in state Completed()
+01:27:11.887 | INFO    | Task run '8b-skip-promotion-229' - Finished in state Completed()
+01:27:11.915 | INFO    | Task run '10-record-summary-bf8' - Finished in state Completed()
+01:27:12.625 | INFO    | Flow run 'classic-pegasus' - Finished in state Completed()
+AFTER WEEK 8: workflow prod=v3 status=SUCCESS | endpoint serves model_version=3 p=0.8133
+01:27:13.463 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8759

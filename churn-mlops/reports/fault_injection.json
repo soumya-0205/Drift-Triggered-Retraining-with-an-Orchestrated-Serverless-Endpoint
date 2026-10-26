@@ -1,0 +1,220 @@
+[
+  {
+    "case": "F1 corrupt batch (column dropped)",
+    "week": 6,
+    "expected": "FAILED at validate, no retry, prod unchanged",
+    "status": "FAILED",
+    "branch": null,
+    "error": "ValidationError: missing columns: ['Total_Charges']",
+    "promoted": false,
+    "escalated": false,
+    "seconds": 0.05,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": null
+  },
+  {
+    "case": "F2 registry flaky (2 timeouts)",
+    "week": 3,
+    "expected": "SUCCESS after retries (self-heals)",
+    "status": "SUCCESS",
+    "branch": "no_action",
+    "error": null,
+    "promoted": false,
+    "escalated": false,
+    "seconds": 3.35,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": null
+  },
+  {
+    "case": "F3 registry down (permanent)",
+    "week": 6,
+    "expected": "FAILED after 3 retries w/ backoff, prod unchanged",
+    "status": "FAILED",
+    "branch": null,
+    "error": "ConnectionError: registry unavailable (injected, permanent)",
+    "promoted": false,
+    "escalated": false,
+    "seconds": 7.11,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": null
+  },
+  {
+    "case": "F4 worse challenger",
+    "week": 6,
+    "expected": "gate REJECTS, prod unchanged",
+    "status": "SUCCESS",
+    "branch": "retrain",
+    "error": null,
+    "promoted": false,
+    "escalated": false,
+    "seconds": 2.89,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": {
+      "passed": false,
+      "logloss_gain": -0.2809,
+      "prod": {
+        "roc_auc": 0.7592,
+        "log_loss": 0.5682
+      },
+      "chal": {
+        "roc_auc": 0.4611,
+        "log_loss": 0.7278
+      }
+    }
+  },
+  {
+    "case": "F5 registry write fails at challenger registration",
+    "week": 6,
+    "expected": "FAILED after retries, prod unchanged",
+    "status": "FAILED",
+    "branch": "retrain",
+    "error": "ConnectionError: registry write failed (injected, permanent)",
+    "promoted": false,
+    "escalated": false,
+    "seconds": 7.66,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": {
+      "passed": true,
+      "logloss_gain": 0.024,
+      "prod": {
+        "roc_auc": 0.7592,
+        "log_loss": 0.5682
+      },
+      "chal": {
+        "roc_auc": 0.7704,
+        "log_loss": 0.5545
+      }
+    }
+  },
+  {
+    "case": "F6a worse challenger #1 (rule: 2 consecutive fails)",
+    "week": 6,
+    "expected": "rejected",
+    "status": "SUCCESS",
+    "branch": "retrain",
+    "error": null,
+    "promoted": false,
+    "escalated": false,
+    "seconds": 3.11,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": {
+      "passed": false,
+      "logloss_gain": -0.2809,
+      "prod": {
+        "roc_auc": 0.7592,
+        "log_loss": 0.5682
+      },
+      "chal": {
+        "roc_auc": 0.4611,
+        "log_loss": 0.7278
+      }
+    }
+  },
+  {
+    "case": "F6b worse challenger #2",
+    "week": 7,
+    "expected": "rejected",
+    "status": "SUCCESS",
+    "branch": "retrain",
+    "error": null,
+    "promoted": false,
+    "escalated": false,
+    "seconds": 2.77,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": {
+      "passed": false,
+      "logloss_gain": -0.3255,
+      "prod": {
+        "roc_auc": 0.7295,
+        "log_loss": 0.6417
+      },
+      "chal": {
+        "roc_auc": 0.4181,
+        "log_loss": 0.8506
+      }
+    }
+  },
+  {
+    "case": "F6c next drift week -> ESCALATE (no auto retrain)",
+    "week": 8,
+    "expected": "ESCALATED by fail-count rule",
+    "status": "ESCALATED",
+    "branch": "escalate",
+    "error": null,
+    "promoted": false,
+    "escalated": true,
+    "seconds": 0.38,
+    "endpoint_before": [
+      1,
+      0.8515
+    ],
+    "endpoint_after": [
+      1,
+      0.8515
+    ],
+    "production_unchanged": true,
+    "gate": null
+  },
+  {
+    "case": "F7 look-ahead guard",
+    "expected": "LookAheadError",
+    "status": "BLOCKED",
+    "error": "week 4 requested during week 3"
+  }
+]

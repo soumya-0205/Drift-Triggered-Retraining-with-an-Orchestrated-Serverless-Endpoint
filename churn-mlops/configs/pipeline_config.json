@@ -1,0 +1,16 @@
+{
+  "_comment": "Single source of truth for pipeline settings. Read by src/common.py, src/pipeline_core.py and flows/weekly_pipeline.py.",
+  "decision_threshold": 0.35,
+  "drift_threshold_psi": 0.25,
+  "escalation_enabled": true,
+  "escalation_psi": 1.0,
+  "escalation_consecutive_failed_challengers": 2,
+  "window_weeks": 3,
+  "reference_weight": 0.25,
+  "eval_half_fraction": 0.4,
+  "gate_min_logloss_gain": 0.02,
+  "gate_max_auc_drop": 0.01,
+  "cost_missed_churner_usd": 200,
+  "cost_false_alert_usd": 20,
+  "cost_retraining_run_usd": 50
+}

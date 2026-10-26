@@ -1,0 +1,8 @@
+{
+  "6": {
+    "decision": "approve_retrain",
+    "by": "simulated on-call ML engineer",
+    "note": "reviewed week 6 PSI=1.538 on Monthly_Charges (abrupt shift); approve gated retrain on next run",
+    "ts": "2026-10-20 04:40:06"
+  }
+}

@@ -1,0 +1,9 @@
+week,my_max,ev_max,mine_flag_0.25,evidently_flag_0.25,top_feature_mine,top_feature_evidently
+1,0.043,0.032,False,False,Total_Charges,Tenure_Months
+2,0.03,0.061,False,False,Total_Charges,Monthly_Charges
+3,0.057,0.08,False,False,Monthly_Charges,Monthly_Charges
+4,0.166,0.187,False,False,Monthly_Charges,Monthly_Charges
+5,0.345,0.348,True,True,Monthly_Charges,Monthly_Charges
+6,1.538,2.418,True,True,Monthly_Charges,Monthly_Charges
+7,1.903,2.178,True,True,Monthly_Charges,Monthly_Charges
+8,1.574,2.379,True,True,Monthly_Charges,Monthly_Charges

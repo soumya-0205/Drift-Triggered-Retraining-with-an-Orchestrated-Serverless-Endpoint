@@ -1,0 +1,382 @@
+[
+ {
+  "week": 1,
+  "flow_run": "wild-bull",
+  "id": "755767e9-75cb-49f4-aa15-c02664697de9",
+  "state": "Completed",
+  "duration_s": 1.21,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 2,
+  "flow_run": "enthusiastic-trogon",
+  "id": "08672eae-de7d-4605-b5b4-d3fb12d451fb",
+  "state": "Completed",
+  "duration_s": 0.39,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 3,
+  "flow_run": "nimble-serval",
+  "id": "cad4f0e6-70b3-4069-a5df-877f00004b34",
+  "state": "Completed",
+  "duration_s": 0.43,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 4,
+  "flow_run": "wild-chinchilla",
+  "id": "845b735d-6b12-45c3-bdd2-dbec95d08b1e",
+  "state": "Completed",
+  "duration_s": 0.4,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 5,
+  "flow_run": "optimistic-spaniel",
+  "id": "66be281c-7249-4b79-be29-d5287fb13ea1",
+  "state": "Completed",
+  "duration_s": 4.46,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7a-retrain",
+    "Completed"
+   ],
+   [
+    "7b-compare-on-recent-data",
+    "Completed"
+   ],
+   [
+    "7c-register-challenger",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 6,
+  "flow_run": "gracious-crane",
+  "id": "c7bc2bcd-3074-497c-abb5-4db948cc838a",
+  "state": "Completed",
+  "duration_s": 0.49,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "9-escalate-to-human",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 7,
+  "flow_run": "victorious-heron",
+  "id": "37b5dbc3-7084-46ed-b43b-dc2ec1549946",
+  "state": "Completed",
+  "duration_s": 3.27,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7a-retrain",
+    "Completed"
+   ],
+   [
+    "7b-compare-on-recent-data",
+    "Completed"
+   ],
+   [
+    "7c-register-challenger",
+    "Completed"
+   ],
+   [
+    "8a-promote",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ },
+ {
+  "week": 8,
+  "flow_run": "diligent-manticore",
+  "id": "48cc4e78-f159-4148-8ebd-350695dfa3fc",
+  "state": "Completed",
+  "duration_s": 0.36,
+  "tasks": [
+   [
+    "1-ingest",
+    "Completed"
+   ],
+   [
+    "2-validate",
+    "Completed"
+   ],
+   [
+    "3-load-production",
+    "Completed"
+   ],
+   [
+    "4-score-deployed-model",
+    "Completed"
+   ],
+   [
+    "5-drift-check",
+    "Completed"
+   ],
+   [
+    "6-decide",
+    "Completed"
+   ],
+   [
+    "7x-skip-retrain",
+    "Completed"
+   ],
+   [
+    "8b-skip-promotion",
+    "Completed"
+   ],
+   [
+    "10-record-summary",
+    "Completed"
+   ]
+  ]
+ }
+]

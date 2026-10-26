@@ -1,0 +1,116 @@
+04:39:55.342 | INFO    | Flow run 'wild-bull' - Beginning flow run 'wild-bull' for flow 'weekly-churn-pipeline'
+04:39:55.353 | INFO    | Flow run 'wild-bull' - View at http://127.0.0.1:4200/runs/flow-run/755767e9-75cb-49f4-aa15-c02664697de9
+04:39:55.387 | INFO    | Task run '1-ingest-627' - Finished in state Completed()
+04:39:55.425 | INFO    | Task run '2-validate-987' - Finished in state Completed()
+04:39:56.319 | INFO    | Task run '3-load-production-d83' - Finished in state Completed()
+04:39:56.361 | INFO    | Task run '4-score-deployed-model-ba8' - Finished in state Completed()
+04:39:56.454 | INFO    | Task run '5-drift-check-c6a' - Finished in state Completed()
+04:39:56.467 | INFO    | Task run '6-decide-dbe' - Finished in state Completed()
+04:39:56.473 | INFO    | Task run '7x-skip-retrain-4dd' - Finished in state Completed()
+04:39:56.479 | INFO    | Task run '8b-skip-promotion-27a' - Finished in state Completed()
+04:39:56.505 | INFO    | Task run '10-record-summary-496' - Finished in state Completed()
+04:39:57.383 | INFO    | Flow run 'wild-bull' - Finished in state Completed()
+week 1: SUCCESS   branch=no_action psi=0.0434 retrained=False promoted=False prod v1->v1
+04:39:57.460 | INFO    | Flow run 'enthusiastic-trogon' - Beginning flow run 'enthusiastic-trogon' for flow 'weekly-churn-pipeline'
+04:39:57.461 | INFO    | Flow run 'enthusiastic-trogon' - View at http://127.0.0.1:4200/runs/flow-run/08672eae-de7d-4605-b5b4-d3fb12d451fb
+04:39:57.478 | INFO    | Task run '1-ingest-5d0' - Finished in state Completed()
+04:39:57.515 | INFO    | Task run '2-validate-776' - Finished in state Completed()
+04:39:57.620 | INFO    | Task run '3-load-production-cbd' - Finished in state Completed()
+04:39:57.662 | INFO    | Task run '4-score-deployed-model-9f0' - Finished in state Completed()
+04:39:57.756 | INFO    | Task run '5-drift-check-d21' - Finished in state Completed()
+04:39:57.769 | INFO    | Task run '6-decide-ae1' - Finished in state Completed()
+04:39:57.775 | INFO    | Task run '7x-skip-retrain-122' - Finished in state Completed()
+04:39:57.782 | INFO    | Task run '8b-skip-promotion-f75' - Finished in state Completed()
+04:39:57.810 | INFO    | Task run '10-record-summary-52e' - Finished in state Completed()
+04:39:58.465 | INFO    | Flow run 'enthusiastic-trogon' - Finished in state Completed()
+week 2: SUCCESS   branch=no_action psi=0.0302 retrained=False promoted=False prod v1->v1
+04:39:58.547 | INFO    | Flow run 'nimble-serval' - Beginning flow run 'nimble-serval' for flow 'weekly-churn-pipeline'
+04:39:58.548 | INFO    | Flow run 'nimble-serval' - View at http://127.0.0.1:4200/runs/flow-run/cad4f0e6-70b3-4069-a5df-877f00004b34
+04:39:58.560 | INFO    | Task run '1-ingest-567' - Finished in state Completed()
+04:39:58.597 | INFO    | Task run '2-validate-776' - Finished in state Completed()
+04:39:58.719 | INFO    | Task run '3-load-production-d81' - Finished in state Completed()
+04:39:58.763 | INFO    | Task run '4-score-deployed-model-c54' - Finished in state Completed()
+04:39:58.862 | INFO    | Task run '5-drift-check-c56' - Finished in state Completed()
+04:39:58.872 | INFO    | Task run '6-decide-6bb' - Finished in state Completed()
+04:39:58.881 | INFO    | Task run '7x-skip-retrain-5e5' - Finished in state Completed()
+04:39:58.888 | INFO    | Task run '8b-skip-promotion-838' - Finished in state Completed()
+04:39:58.918 | INFO    | Task run '10-record-summary-7c6' - Finished in state Completed()
+04:39:59.551 | INFO    | Flow run 'nimble-serval' - Finished in state Completed()
+week 3: SUCCESS   branch=no_action psi=0.0574 retrained=False promoted=False prod v1->v1
+04:39:59.631 | INFO    | Flow run 'wild-chinchilla' - Beginning flow run 'wild-chinchilla' for flow 'weekly-churn-pipeline'
+04:39:59.634 | INFO    | Flow run 'wild-chinchilla' - View at http://127.0.0.1:4200/runs/flow-run/845b735d-6b12-45c3-bdd2-dbec95d08b1e
+04:39:59.647 | INFO    | Task run '1-ingest-c4f' - Finished in state Completed()
+04:39:59.681 | INFO    | Task run '2-validate-1c8' - Finished in state Completed()
+04:39:59.789 | INFO    | Task run '3-load-production-e55' - Finished in state Completed()
+04:39:59.832 | INFO    | Task run '4-score-deployed-model-5a3' - Finished in state Completed()
+04:39:59.930 | INFO    | Task run '5-drift-check-d07' - Finished in state Completed()
+04:39:59.940 | INFO    | Task run '6-decide-fbd' - Finished in state Completed()
+04:39:59.947 | INFO    | Task run '7x-skip-retrain-7d8' - Finished in state Completed()
+04:39:59.954 | INFO    | Task run '8b-skip-promotion-088' - Finished in state Completed()
+04:39:59.983 | INFO    | Task run '10-record-summary-ad0' - Finished in state Completed()
+04:40:00.638 | INFO    | Flow run 'wild-chinchilla' - Finished in state Completed()
+week 4: SUCCESS   branch=no_action psi=0.1657 retrained=False promoted=False prod v1->v1
+04:40:00.730 | INFO    | Flow run 'optimistic-spaniel' - Beginning flow run 'optimistic-spaniel' for flow 'weekly-churn-pipeline'
+04:40:00.732 | INFO    | Flow run 'optimistic-spaniel' - View at http://127.0.0.1:4200/runs/flow-run/66be281c-7249-4b79-be29-d5287fb13ea1
+04:40:00.749 | INFO    | Task run '1-ingest-e38' - Finished in state Completed()
+04:40:00.801 | INFO    | Task run '2-validate-19e' - Finished in state Completed()
+04:40:00.933 | INFO    | Task run '3-load-production-e80' - Finished in state Completed()
+04:40:00.974 | INFO    | Task run '4-score-deployed-model-28a' - Finished in state Completed()
+04:40:01.075 | INFO    | Task run '5-drift-check-636' - Finished in state Completed()
+04:40:01.086 | INFO    | Task run '6-decide-3ea' - Finished in state Completed()
+04:40:01.198 | INFO    | Task run '7a-retrain-e69' - Finished in state Completed()
+04:40:01.249 | INFO    | Task run '7b-compare-on-recent-data-87b' - Finished in state Completed()
+2026/10/20 04:40:01 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '2' of model 'churn-model'.
+04:40:05.106 | INFO    | Task run '7c-register-challenger-473' - Finished in state Completed()
+04:40:05.116 | INFO    | Task run '8b-skip-promotion-438' - Finished in state Completed()
+04:40:05.144 | INFO    | Task run '10-record-summary-b6b' - Finished in state Completed()
+04:40:05.740 | INFO    | Flow run 'optimistic-spaniel' - Finished in state Completed()
+week 5: SUCCESS   branch=retrain psi=0.345 retrained=True promoted=False prod v1->v1
+04:40:05.822 | INFO    | Flow run 'gracious-crane' - Beginning flow run 'gracious-crane' for flow 'weekly-churn-pipeline'
+04:40:05.823 | INFO    | Flow run 'gracious-crane' - View at http://127.0.0.1:4200/runs/flow-run/c7bc2bcd-3074-497c-abb5-4db948cc838a
+04:40:05.837 | INFO    | Task run '1-ingest-160' - Finished in state Completed()
+04:40:05.879 | INFO    | Task run '2-validate-206' - Finished in state Completed()
+04:40:05.992 | INFO    | Task run '3-load-production-fd8' - Finished in state Completed()
+04:40:06.037 | INFO    | Task run '4-score-deployed-model-4c7' - Finished in state Completed()
+04:40:06.165 | INFO    | Task run '5-drift-check-bd0' - Finished in state Completed()
+04:40:06.176 | INFO    | Task run '6-decide-6a5' - Finished in state Completed()
+04:40:06.184 | CRITICAL | Task run '9-escalate-to-human-f6f' - ESCALATION_TRIGGERED week=6 reasons=['max PSI 1.54 >= 1.0 on Monthly_Charges']
+04:40:06.220 | INFO    | Task run '9-escalate-to-human-f6f' - Finished in state Completed()
+04:40:06.230 | INFO    | Task run '7x-skip-retrain-190' - Finished in state Completed()
+04:40:06.235 | INFO    | Task run '8b-skip-promotion-90d' - Finished in state Completed()
+04:40:06.265 | INFO    | Task run '10-record-summary-778' - Finished in state Completed()
+04:40:06.825 | INFO    | Flow run 'gracious-crane' - Finished in state Completed()
+week 6: ESCALATED branch=escalate psi=1.538 retrained=False promoted=False prod v1->v1
+04:40:06.911 | INFO    | Flow run 'victorious-heron' - Beginning flow run 'victorious-heron' for flow 'weekly-churn-pipeline'
+04:40:06.912 | INFO    | Flow run 'victorious-heron' - View at http://127.0.0.1:4200/runs/flow-run/37b5dbc3-7084-46ed-b43b-dc2ec1549946
+04:40:06.923 | INFO    | Task run '1-ingest-190' - Finished in state Completed()
+04:40:06.961 | INFO    | Task run '2-validate-d0c' - Finished in state Completed()
+04:40:07.063 | INFO    | Task run '3-load-production-a88' - Finished in state Completed()
+04:40:07.110 | INFO    | Task run '4-score-deployed-model-1db' - Finished in state Completed()
+04:40:07.246 | INFO    | Task run '5-drift-check-df9' - Finished in state Completed()
+04:40:07.255 | INFO    | Task run '6-decide-243' - Finished in state Completed()
+04:40:07.374 | INFO    | Task run '7a-retrain-45f' - Finished in state Completed()
+04:40:07.442 | INFO    | Task run '7b-compare-on-recent-data-917' - Finished in state Completed()
+2026/10/20 04:40:07 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '3' of model 'churn-model'.
+04:40:10.068 | INFO    | Task run '7c-register-challenger-cf9' - Finished in state Completed()
+04:40:10.108 | INFO    | Task run '8a-promote-d6a' - Finished in state Completed()
+04:40:10.134 | INFO    | Task run '10-record-summary-002' - Finished in state Completed()
+04:40:10.914 | INFO    | Flow run 'victorious-heron' - Finished in state Completed()
+week 7: SUCCESS   branch=retrain psi=1.9025 retrained=True promoted=True prod v1->v3
+04:40:10.987 | INFO    | Flow run 'diligent-manticore' - Beginning flow run 'diligent-manticore' for flow 'weekly-churn-pipeline'
+04:40:10.989 | INFO    | Flow run 'diligent-manticore' - View at http://127.0.0.1:4200/runs/flow-run/48cc4e78-f159-4148-8ebd-350695dfa3fc
+04:40:11.001 | INFO    | Task run '1-ingest-787' - Finished in state Completed()
+04:40:11.036 | INFO    | Task run '2-validate-112' - Finished in state Completed()
+04:40:11.129 | INFO    | Task run '3-load-production-07f' - Finished in state Completed()
+04:40:11.169 | INFO    | Task run '4-score-deployed-model-15b' - Finished in state Completed()
+04:40:11.256 | INFO    | Task run '5-drift-check-252' - Finished in state Completed()
+04:40:11.268 | INFO    | Task run '6-decide-dc2' - Finished in state Completed()
+04:40:11.279 | INFO    | Task run '7x-skip-retrain-bc3' - Finished in state Completed()
+04:40:11.283 | INFO    | Task run '8b-skip-promotion-9ef' - Finished in state Completed()
+04:40:11.313 | INFO    | Task run '10-record-summary-a54' - Finished in state Completed()
+04:40:11.994 | INFO    | Flow run 'diligent-manticore' - Finished in state Completed()
+week 8: SUCCESS   branch=no_action psi=0.1071 retrained=False promoted=False prod v3->v3

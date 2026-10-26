@@ -1,0 +1,371 @@
+2026/10/21 01:25:37 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/21 01:25:37 INFO mlflow.store.db.utils: Updating database tables
+2026/10/21 01:25:39 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Successfully registered model 'churn-model'.
+Created version '1' of model 'churn-model'.
+registered + promoted version 1
+{'holdout_pr_auc': 0.469, 'holdout_roc_auc': 0.753, 'holdout_f1': 0.469, 'holdout_recall': 0.461, 'holdout_precision': 0.477, 'holdout_log_loss': 0.44, 'holdout_brier': 0.139, 'holdout_mean_pred': 0.206, 'holdout_positive_rate': 0.205, 'train_pr_auc': 0.529, 'train_roc_auc': 0.806}
+01:25:45.439 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8654
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:25:53.971 | ERROR   | docket.dependencies - ↩ [    39ms] send_telemetry_heartbeat(){send_telemetry_heartbeat}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1953, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 258, in execute
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 412, in _handle_exception
+    self._handle_exception_no_connection(self.dbapi, error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 237, in _handle_exception_no_connection
+    super()._handle_exception_no_connection(dbapi, error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 409, in _handle_exception_no_connection
+    raise error.with_traceback(exc_info[2])
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 256, in execute
+    return await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/concurrency.py", line 167, in await_
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/concurrency.py", line 205, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 279, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/docket/worker.py", line 1134, in _execute
+    result = await execution.function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/prefect/server/services/telemetry.py", line 80, in send_telemetry_heartbeat
+    session_start_timestamp, session_id = await _fetch_or_set_telemetry_session(db=db)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/prefect/server/services/telemetry.py", line 54, in _fetch_or_set_telemetry_session
+    await configuration.write_configuration(session, telemetry_session)
+  File "/usr/local/lib/python3.12/dist-packages/prefect/server/models/configuration.py", line 29, in write_configuration
+    await session.flush()
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/ext/asyncio/session.py", line 1030, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/concurrency.py", line 212, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/session.py", line 4536, in flush
+    self._flush(objects)
+  File "<sqlalchemy generated warned() wrapper for sqlalchemy.orm.session.Session._flush>", line 2, in _flush
+    return target(fn, self, objects=objects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/session.py", line 4679, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/session.py", line 4640, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/unitofwork.py", line 643, in execute
+    util.preloaded.orm_persistence._save_obj(
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/persistence.py", line 92, in _save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/persistence.py", line 1237, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1458, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/sql/elements.py", line 533, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1678, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1832, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1972, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 2342, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/base.py", line 1953, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 258, in execute
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 412, in _handle_exception
+    self._handle_exception_no_connection(self.dbapi, error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 237, in _handle_exception_no_connection
+    super()._handle_exception_no_connection(dbapi, error)
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 409, in _handle_exception_no_connection
+    raise error.with_traceback(exc_info[2])
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 256, in execute
+    return await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/concurrency.py", line 167, in await_
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/util/concurrency.py", line 205, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sqlalchemy/connectors/asyncio.py", line 279, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/aiosqlite/core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO configuration ("key", value, id, created, updated) VALUES (:key, :value, :id, :created, :updated)]
+[parameters: {'key': 'TELEMETRY_SESSION', 'value': '{"session_id": "78a25349-e59d-47c6-bb12-b3d3778c39d1", "session_start_timestamp": "2026-10-21T01:25:53.963847+00:00"}', 'id': '9c1cc729-846b-47b2-b3ba-dbbfeb99a0ac', 'created': '2026-10-21 01:25:53.966479', 'updated': '2026-10-21 01:25:53.966488'}]
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
+01:25:54.641 | INFO    | Flow run 'fortunate-porcupine' - Beginning flow run 'fortunate-porcupine' for flow 'weekly-churn-pipeline'
+01:25:54.685 | INFO    | Task run '1-ingest-007' - Finished in state Completed()
+01:25:54.727 | INFO    | Task run '2-validate-30a' - Finished in state Completed()
+01:25:54.919 | INFO    | Task run '3-load-production-acc' - Finished in state Completed()
+01:25:54.970 | INFO    | Task run '4-score-deployed-model-e9a' - Finished in state Completed()
+01:25:55.089 | INFO    | Task run '5-drift-check-24f' - Finished in state Completed()
+01:25:55.098 | INFO    | Task run '6-decide-a12' - Finished in state Completed()
+01:25:55.110 | INFO    | Task run '7x-skip-retrain-1f8' - Finished in state Completed()
+01:25:55.118 | INFO    | Task run '8b-skip-promotion-32a' - Finished in state Completed()
+01:25:55.151 | INFO    | Task run '10-record-summary-70c' - Finished in state Completed()
+01:25:55.681 | INFO    | Flow run 'fortunate-porcupine' - Finished in state Completed()
+01:25:55.758 | INFO    | Flow run 'flexible-barnacle' - Beginning flow run 'flexible-barnacle' for flow 'weekly-churn-pipeline'
+01:25:55.768 | INFO    | Task run '1-ingest-a52' - Finished in state Completed()
+01:25:55.817 | INFO    | Task run '2-validate-23d' - Finished in state Completed()
+01:25:55.935 | INFO    | Task run '3-load-production-33f' - Finished in state Completed()
+01:25:55.979 | INFO    | Task run '4-score-deployed-model-ac7' - Finished in state Completed()
+01:25:56.073 | INFO    | Task run '5-drift-check-a02' - Finished in state Completed()
+01:25:56.083 | INFO    | Task run '6-decide-729' - Finished in state Completed()
+01:25:56.091 | INFO    | Task run '7x-skip-retrain-ff6' - Finished in state Completed()
+01:25:56.099 | INFO    | Task run '8b-skip-promotion-45a' - Finished in state Completed()
+01:25:56.133 | INFO    | Task run '10-record-summary-940' - Finished in state Completed()
+01:25:56.761 | INFO    | Flow run 'flexible-barnacle' - Finished in state Completed()
+01:25:56.835 | INFO    | Flow run 'acoustic-asp' - Beginning flow run 'acoustic-asp' for flow 'weekly-churn-pipeline'
+01:25:56.848 | INFO    | Task run '1-ingest-ec2' - Finished in state Completed()
+01:25:56.889 | INFO    | Task run '2-validate-aec' - Finished in state Completed()
+01:25:56.992 | INFO    | Task run '3-load-production-c55' - Finished in state Completed()
+01:25:57.032 | INFO    | Task run '4-score-deployed-model-da1' - Finished in state Completed()
+01:25:57.136 | INFO    | Task run '5-drift-check-4f5' - Finished in state Completed()
+01:25:57.140 | INFO    | Task run '6-decide-1fd' - Finished in state Completed()
+01:25:57.152 | INFO    | Task run '7x-skip-retrain-f23' - Finished in state Completed()
+01:25:57.159 | INFO    | Task run '8b-skip-promotion-8c6' - Finished in state Completed()
+01:25:57.190 | INFO    | Task run '10-record-summary-aa2' - Finished in state Completed()
+01:25:57.837 | INFO    | Flow run 'acoustic-asp' - Finished in state Completed()
+01:25:57.914 | INFO    | Flow run 'solemn-stingray' - Beginning flow run 'solemn-stingray' for flow 'weekly-churn-pipeline'
+01:25:57.929 | INFO    | Task run '1-ingest-c91' - Finished in state Completed()
+01:25:57.970 | INFO    | Task run '2-validate-9df' - Finished in state Completed()
+01:25:58.110 | INFO    | Task run '3-load-production-610' - Finished in state Completed()
+01:25:58.148 | INFO    | Task run '4-score-deployed-model-002' - Finished in state Completed()
+01:25:58.225 | INFO    | Task run '5-drift-check-277' - Finished in state Completed()
+01:25:58.234 | INFO    | Task run '6-decide-150' - Finished in state Completed()
+01:25:58.243 | INFO    | Task run '7x-skip-retrain-aa0' - Finished in state Completed()
+01:25:58.252 | INFO    | Task run '8b-skip-promotion-f7e' - Finished in state Completed()
+01:25:58.279 | INFO    | Task run '10-record-summary-a73' - Finished in state Completed()
+01:25:58.919 | INFO    | Flow run 'solemn-stingray' - Finished in state Completed()
+01:25:59.015 | INFO    | Flow run 'infallible-bobcat' - Beginning flow run 'infallible-bobcat' for flow 'weekly-churn-pipeline'
+01:25:59.030 | INFO    | Task run '1-ingest-e87' - Finished in state Completed()
+01:25:59.077 | INFO    | Task run '2-validate-d00' - Finished in state Completed()
+01:25:59.194 | INFO    | Task run '3-load-production-0eb' - Finished in state Completed()
+01:25:59.238 | INFO    | Task run '4-score-deployed-model-455' - Finished in state Completed()
+01:25:59.335 | INFO    | Task run '5-drift-check-7d8' - Finished in state Completed()
+01:25:59.346 | INFO    | Task run '6-decide-450' - Finished in state Completed()
+01:25:59.478 | INFO    | Task run '7a-retrain-0e2' - Finished in state Completed()
+01:25:59.536 | INFO    | Task run '7b-compare-on-recent-data-e95' - Finished in state Completed()
+2026/10/21 01:25:59 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '2' of model 'churn-model'.
+01:26:01.959 | INFO    | Task run '7c-register-challenger-f43' - Finished in state Completed()
+01:26:01.968 | INFO    | Task run '8b-skip-promotion-254' - Finished in state Completed()
+01:26:01.990 | INFO    | Task run '10-record-summary-f71' - Finished in state Completed()
+01:26:02.033 | INFO    | Flow run 'infallible-bobcat' - Finished in state Completed()
+01:26:02.141 | INFO    | Flow run 'merry-eel' - Beginning flow run 'merry-eel' for flow 'weekly-churn-pipeline'
+01:26:02.155 | INFO    | Task run '1-ingest-da1' - Finished in state Completed()
+01:26:02.167 | ERROR   | Task run '2-validate-916' - Task run failed with exception: ValidationError("missing columns: ['Total_Charges']")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1027, in run_context
+    yield self
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1696, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1044, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/prefect/utilities/callables/__init__.py", line 356, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/churn-mlops/flows/weekly_pipeline.py", line 44, in validate
+    return validate_batch(df, week)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/churn-mlops/src/pipeline_core.py", line 27, in validate_batch
+    if missing: raise ValidationError(f"missing columns: {missing}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pipeline_core.ValidationError: missing columns: ['Total_Charges']
+01:26:02.174 | ERROR   | Task run '2-validate-916' - Finished in state Failed("Task run encountered an exception ValidationError: missing columns: ['Total_Charges']")
+01:26:02.194 | ERROR   | Flow run 'merry-eel' - RUN FAILED week=6: ValidationError: missing columns: ['Total_Charges'] | production model unchanged (version 1)
+01:26:02.204 | INFO    | Task run '10-record-summary-6bb' - Finished in state Completed()
+01:26:03.143 | INFO    | Flow run 'merry-eel' - Finished in state Completed()
+### F1 corrupt batch (column dropped): status=FAILED promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=0.05s err=ValidationError: missing columns: ['Total_Charges']
+01:26:03.241 | INFO    | Flow run 'tricky-kestrel' - Beginning flow run 'tricky-kestrel' for flow 'weekly-churn-pipeline'
+01:26:03.252 | INFO    | Task run '1-ingest-e7f' - Finished in state Completed()
+01:26:03.295 | INFO    | Task run '2-validate-f0f' - Finished in state Completed()
+01:26:03.303 | INFO    | Task run '3-load-production-dee' - Task run failed with exception: ConnectionError('registry timeout (injected, attempt 1)') - Retry 1/3 will start 1 second(s) from now
+01:26:04.310 | INFO    | Task run '3-load-production-dee' - Task run failed with exception: ConnectionError('registry timeout (injected, attempt 2)') - Retry 2/3 will start 2 second(s) from now
+01:26:06.400 | INFO    | Task run '3-load-production-dee' - Finished in state Completed()
+01:26:06.445 | INFO    | Task run '4-score-deployed-model-118' - Finished in state Completed()
+01:26:06.540 | INFO    | Task run '5-drift-check-77a' - Finished in state Completed()
+01:26:06.551 | INFO    | Task run '6-decide-f04' - Finished in state Completed()
+01:26:06.562 | INFO    | Task run '7x-skip-retrain-dda' - Finished in state Completed()
+01:26:06.568 | INFO    | Task run '8b-skip-promotion-f0e' - Finished in state Completed()
+01:26:06.602 | INFO    | Task run '10-record-summary-98f' - Finished in state Completed()
+01:26:07.256 | INFO    | Flow run 'tricky-kestrel' - Finished in state Completed()
+### F2 registry flaky (2 timeouts): status=SUCCESS promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=3.35s err=None
+01:26:07.348 | INFO    | Flow run 'casual-bettong' - Beginning flow run 'casual-bettong' for flow 'weekly-churn-pipeline'
+01:26:07.363 | INFO    | Task run '1-ingest-6b8' - Finished in state Completed()
+01:26:07.410 | INFO    | Task run '2-validate-b35' - Finished in state Completed()
+01:26:07.418 | INFO    | Task run '3-load-production-b3c' - Task run failed with exception: ConnectionError('registry unavailable (injected, permanent)') - Retry 1/3 will start 1 second(s) from now
+01:26:08.423 | INFO    | Task run '3-load-production-b3c' - Task run failed with exception: ConnectionError('registry unavailable (injected, permanent)') - Retry 2/3 will start 2 second(s) from now
+01:26:10.430 | INFO    | Task run '3-load-production-b3c' - Task run failed with exception: ConnectionError('registry unavailable (injected, permanent)') - Retry 3/3 will start 4 second(s) from now
+01:26:14.433 | ERROR   | Task run '3-load-production-b3c' - Task run failed with exception: ConnectionError('registry unavailable (injected, permanent)') - Retries are exhausted
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1027, in run_context
+    yield self
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1696, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1044, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/prefect/utilities/callables/__init__.py", line 356, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/churn-mlops/flows/weekly_pipeline.py", line 49, in load_production
+    if fault == "registry_down": raise ConnectionError("registry unavailable (injected, permanent)")
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionError: registry unavailable (injected, permanent)
+01:26:14.438 | ERROR   | Task run '3-load-production-b3c' - Finished in state Failed('Task run encountered an exception ConnectionError: registry unavailable (injected, permanent)')
+01:26:14.459 | ERROR   | Flow run 'casual-bettong' - RUN FAILED week=6: ConnectionError: registry unavailable (injected, permanent) | production model unchanged (version 1)
+01:26:14.469 | INFO    | Task run '10-record-summary-d1d' - Finished in state Completed()
+01:26:15.355 | INFO    | Flow run 'casual-bettong' - Finished in state Completed()
+### F3 registry down (permanent): status=FAILED promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=7.11s err=ConnectionError: registry unavailable (injected, permanent)
+01:26:15.497 | INFO    | Flow run 'peridot-bonobo' - Beginning flow run 'peridot-bonobo' for flow 'weekly-churn-pipeline'
+01:26:15.517 | INFO    | Task run '1-ingest-16c' - Finished in state Completed()
+01:26:15.565 | INFO    | Task run '2-validate-a86' - Finished in state Completed()
+01:26:15.684 | INFO    | Task run '3-load-production-13c' - Finished in state Completed()
+01:26:15.728 | INFO    | Task run '4-score-deployed-model-9d0' - Finished in state Completed()
+01:26:15.815 | INFO    | Task run '5-drift-check-62a' - Finished in state Completed()
+01:26:15.826 | INFO    | Task run '6-decide-3a3' - Finished in state Completed()
+01:26:15.905 | INFO    | Task run '7a-retrain-da1' - Finished in state Completed()
+01:26:15.948 | INFO    | Task run '7b-compare-on-recent-data-548' - Finished in state Completed()
+2026/10/21 01:26:16 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '3' of model 'churn-model'.
+01:26:18.365 | INFO    | Task run '7c-register-challenger-808' - Finished in state Completed()
+01:26:18.371 | INFO    | Task run '8b-skip-promotion-b7a' - Finished in state Completed()
+01:26:18.398 | INFO    | Task run '10-record-summary-eb7' - Finished in state Completed()
+01:26:18.507 | INFO    | Flow run 'peridot-bonobo' - Finished in state Completed()
+### F4 worse challenger: status=SUCCESS promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=2.89s err=None
+01:26:18.612 | INFO    | Flow run 'thundering-wasp' - Beginning flow run 'thundering-wasp' for flow 'weekly-churn-pipeline'
+01:26:18.628 | INFO    | Task run '1-ingest-e95' - Finished in state Completed()
+01:26:18.672 | INFO    | Task run '2-validate-11a' - Finished in state Completed()
+01:26:18.797 | INFO    | Task run '3-load-production-d9a' - Finished in state Completed()
+01:26:18.850 | INFO    | Task run '4-score-deployed-model-f78' - Finished in state Completed()
+01:26:18.971 | INFO    | Task run '5-drift-check-7dc' - Finished in state Completed()
+01:26:18.980 | INFO    | Task run '6-decide-d15' - Finished in state Completed()
+01:26:19.096 | INFO    | Task run '7a-retrain-a46' - Finished in state Completed()
+01:26:19.157 | INFO    | Task run '7b-compare-on-recent-data-401' - Finished in state Completed()
+01:26:19.211 | INFO    | Task run '7c-register-challenger-bce' - Task run failed with exception: ConnectionError('registry write failed (injected, permanent)') - Retry 1/3 will start 1 second(s) from now
+01:26:20.218 | INFO    | Task run '7c-register-challenger-bce' - Task run failed with exception: ConnectionError('registry write failed (injected, permanent)') - Retry 2/3 will start 2 second(s) from now
+01:26:22.226 | INFO    | Task run '7c-register-challenger-bce' - Task run failed with exception: ConnectionError('registry write failed (injected, permanent)') - Retry 3/3 will start 4 second(s) from now
+01:26:26.230 | ERROR   | Task run '7c-register-challenger-bce' - Task run failed with exception: ConnectionError('registry write failed (injected, permanent)') - Retries are exhausted
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1027, in run_context
+    yield self
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1696, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/usr/local/lib/python3.12/dist-packages/prefect/task_engine.py", line 1044, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/prefect/utilities/callables/__init__.py", line 356, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/churn-mlops/flows/weekly_pipeline.py", line 96, in register_challenger
+    if fault == "registry_down_on_write": raise ConnectionError("registry write failed (injected, permanent)")
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionError: registry write failed (injected, permanent)
+01:26:26.238 | ERROR   | Task run '7c-register-challenger-bce' - Finished in state Failed('Task run encountered an exception ConnectionError: registry write failed (injected, permanent)')
+01:26:26.268 | ERROR   | Flow run 'thundering-wasp' - RUN FAILED week=6: ConnectionError: registry write failed (injected, permanent) | production model unchanged (version 1)
+01:26:26.283 | INFO    | Task run '10-record-summary-950' - Finished in state Completed()
+01:26:26.617 | INFO    | Flow run 'thundering-wasp' - Finished in state Completed()
+### F5 registry write fails at challenger registration: status=FAILED promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=7.66s err=ConnectionError: registry write failed (injected, permanent)
+01:26:26.721 | INFO    | Flow run 'lively-otter' - Beginning flow run 'lively-otter' for flow 'weekly-churn-pipeline'
+01:26:26.733 | INFO    | Task run '1-ingest-58b' - Finished in state Completed()
+01:26:26.776 | INFO    | Task run '2-validate-4db' - Finished in state Completed()
+01:26:26.883 | INFO    | Task run '3-load-production-970' - Finished in state Completed()
+01:26:26.924 | INFO    | Task run '4-score-deployed-model-57e' - Finished in state Completed()
+01:26:27.037 | INFO    | Task run '5-drift-check-074' - Finished in state Completed()
+01:26:27.046 | INFO    | Task run '6-decide-30c' - Finished in state Completed()
+01:26:27.145 | INFO    | Task run '7a-retrain-e96' - Finished in state Completed()
+01:26:27.196 | INFO    | Task run '7b-compare-on-recent-data-f03' - Finished in state Completed()
+2026/10/21 01:26:27 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '4' of model 'churn-model'.
+01:26:29.810 | INFO    | Task run '7c-register-challenger-0a0' - Finished in state Completed()
+01:26:29.815 | INFO    | Task run '8b-skip-promotion-1cb' - Finished in state Completed()
+01:26:29.847 | INFO    | Task run '10-record-summary-9cf' - Finished in state Completed()
+01:26:30.724 | INFO    | Flow run 'lively-otter' - Finished in state Completed()
+### F6a worse challenger #1 (rule: 2 consecutive fails): status=SUCCESS promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=3.11s err=None
+01:26:30.833 | INFO    | Flow run 'ebony-quetzal' - Beginning flow run 'ebony-quetzal' for flow 'weekly-churn-pipeline'
+01:26:30.849 | INFO    | Task run '1-ingest-5f1' - Finished in state Completed()
+01:26:30.893 | INFO    | Task run '2-validate-c88' - Finished in state Completed()
+01:26:31.013 | INFO    | Task run '3-load-production-b31' - Finished in state Completed()
+01:26:31.058 | INFO    | Task run '4-score-deployed-model-644' - Finished in state Completed()
+01:26:31.182 | INFO    | Task run '5-drift-check-454' - Finished in state Completed()
+01:26:31.192 | INFO    | Task run '6-decide-2cc' - Finished in state Completed()
+01:26:31.289 | INFO    | Task run '7a-retrain-91f' - Finished in state Completed()
+01:26:31.334 | INFO    | Task run '7b-compare-on-recent-data-667' - Finished in state Completed()
+2026/10/21 01:26:31 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+Registered model 'churn-model' already exists. Creating a new version of this model...
+Created version '5' of model 'churn-model'.
+01:26:33.588 | INFO    | Task run '7c-register-challenger-3a6' - Finished in state Completed()
+01:26:33.596 | INFO    | Task run '8b-skip-promotion-177' - Finished in state Completed()
+01:26:33.615 | INFO    | Task run '10-record-summary-ad4' - Finished in state Completed()
+01:26:33.836 | INFO    | Flow run 'ebony-quetzal' - Finished in state Completed()
+### F6b worse challenger #2: status=SUCCESS promoted=False escalated=False endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=2.77s err=None
+01:26:33.915 | INFO    | Flow run 'certain-hare' - Beginning flow run 'certain-hare' for flow 'weekly-churn-pipeline'
+01:26:33.927 | INFO    | Task run '1-ingest-4e6' - Finished in state Completed()
+01:26:33.959 | INFO    | Task run '2-validate-d5e' - Finished in state Completed()
+01:26:34.043 | INFO    | Task run '3-load-production-b23' - Finished in state Completed()
+01:26:34.082 | INFO    | Task run '4-score-deployed-model-c00' - Finished in state Completed()
+01:26:34.206 | INFO    | Task run '5-drift-check-2aa' - Finished in state Completed()
+01:26:34.214 | INFO    | Task run '6-decide-c8d' - Finished in state Completed()
+01:26:34.220 | CRITICAL | Task run '9-escalate-to-human-31c' - ESCALATION_TRIGGERED week=8 reasons=['2 consecutive challengers failed the gate']
+01:26:34.259 | INFO    | Task run '9-escalate-to-human-31c' - Finished in state Completed()
+01:26:34.262 | INFO    | Task run '7x-skip-retrain-8f6' - Finished in state Completed()
+01:26:34.271 | INFO    | Task run '8b-skip-promotion-c07' - Finished in state Completed()
+01:26:34.305 | INFO    | Task run '10-record-summary-a78' - Finished in state Completed()
+01:26:34.918 | INFO    | Flow run 'certain-hare' - Finished in state Completed()
+### F6c next drift week -> ESCALATE (no auto retrain): status=ESCALATED promoted=False escalated=True endpoint (1, 0.8515)->(1, 0.8515) unchanged=True t=0.38s err=None
+### F7 look-ahead blocked: week 4 requested during week 3
+01:26:34.946 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8654

@@ -1,0 +1,103 @@
+{
+  "model": "churn-model",
+  "production_alias_version": 3,
+  "versions": [
+    {
+      "version": 1,
+      "aliases": [],
+      "tags": {
+        "run_id": "9b1b7b9ee0ca4d538682c136bf2758a7",
+        "role": "baseline",
+        "trained_on": "churn_reference_train.csv (75% split)"
+      },
+      "params": {
+        "model": "LogisticRegression(C=1)",
+        "threshold": "0.35",
+        "seed": "42",
+        "train_rows": "2250",
+        "holdout_rows": "750"
+      },
+      "metrics": {
+        "holdout_pr_auc": 0.4691,
+        "holdout_roc_auc": 0.7534,
+        "holdout_f1": 0.4686,
+        "holdout_recall": 0.461,
+        "holdout_precision": 0.4765,
+        "holdout_log_loss": 0.4397,
+        "holdout_brier": 0.1393,
+        "holdout_mean_pred": 0.2057,
+        "holdout_positive_rate": 0.2053,
+        "train_pr_auc": 0.5285,
+        "train_roc_auc": 0.8061
+      },
+      "artifacts": [
+        "evaluation.json",
+        "reference_profile.json"
+      ]
+    },
+    {
+      "version": 2,
+      "aliases": [],
+      "tags": {
+        "run_id": "f81a6c7448594df188c9475152ea1b0a",
+        "role": "challenger",
+        "week": "5",
+        "prod_at_training": "1"
+      },
+      "params": {
+        "week": "5",
+        "window_weeks": "3",
+        "ref_weight": "0.25"
+      },
+      "metrics": {
+        "chal_pr_auc": 0.5552,
+        "chal_roc_auc": 0.7485,
+        "chal_f1": 0.5236,
+        "chal_recall": 0.5648,
+        "chal_precision": 0.488,
+        "chal_log_loss": 0.5011,
+        "chal_brier": 0.1661,
+        "chal_mean_pred": 0.2861,
+        "chal_positive_rate": 0.27,
+        "logloss_gain_vs_prod": 0.0076
+      },
+      "artifacts": [
+        "evaluation.json",
+        "reference_profile.json"
+      ]
+    },
+    {
+      "version": 3,
+      "aliases": [
+        "production"
+      ],
+      "tags": {
+        "run_id": "bdc456a604d145ab87fb7f274e70bd3c",
+        "role": "challenger",
+        "week": "7",
+        "prod_at_training": "1"
+      },
+      "params": {
+        "week": "7",
+        "window_weeks": "3",
+        "ref_weight": "0.25"
+      },
+      "metrics": {
+        "chal_pr_auc": 0.7786,
+        "chal_roc_auc": 0.7617,
+        "chal_f1": 0.749,
+        "chal_recall": 0.8524,
+        "chal_precision": 0.6679,
+        "chal_log_loss": 0.5859,
+        "chal_brier": 0.1999,
+        "chal_mean_pred": 0.5059,
+        "chal_positive_rate": 0.525,
+        "logloss_gain_vs_prod": 0.087
+      },
+      "artifacts": [
+        "evaluation.json",
+        "reference_profile.json"
+      ]
+    }
+  ]
+}

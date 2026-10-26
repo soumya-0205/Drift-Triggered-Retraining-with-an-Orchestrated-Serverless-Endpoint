@@ -1,0 +1,13 @@
+{
+  "holdout_pr_auc": 0.46912450348615503,
+  "holdout_roc_auc": 0.7534101804236033,
+  "holdout_f1": 0.46864686468646866,
+  "holdout_recall": 0.461038961038961,
+  "holdout_precision": 0.47651006711409394,
+  "holdout_log_loss": 0.43965532354844866,
+  "holdout_brier": 0.1392557970852897,
+  "holdout_mean_pred": 0.20567591620059078,
+  "holdout_positive_rate": 0.20533333333333334,
+  "train_pr_auc": 0.52854745927309,
+  "train_roc_auc": 0.8061020581534539
+}
